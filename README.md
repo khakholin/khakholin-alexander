@@ -8,7 +8,6 @@ $ npm install
 
 ```bash
 # development
-$ export "API_URL"="<адресс_бэкэнда>"
 $ npm run start
 ```
 
@@ -20,7 +19,22 @@ $ npm run start
 $ docker build -t khakholin-alexander:1.0 .
 ```
 
+```bash
+# tag
+$ docker tag khakholin-alexander:1.0 khakholin/khakholin-alexander:1.0
+```
+
+```bash
+# push
+$ docker push khakholin/khakholin-alexander:1.0
+```
+
 ## Создание и запуск докер контейнера с проектом
+
+```bash
+# просмотр запущенных контейнеров 
+$ docker pull khakholin/khakholin-alexander:1.0
+```
 
 ```bash
 # просмотр запущенных контейнеров 
@@ -43,9 +57,5 @@ $ docker rm <имя_контейнера>
 ```
 
 ```bash
-$ docker run --name khakholin-alexander-front -d --restart=always -p 9000:80 khakholin-alexander:1.0
+$ docker run --name khakholin-alexander-front -d --restart=always -p 80:80 khakholin/khakholin-alexander:1.0
 ```
-
-Пример: <br>
-<адресс_бэкэнда> = 'http://192.168.1.83:8081' <br>
-<имя_контейнера> = interview-tool-front
