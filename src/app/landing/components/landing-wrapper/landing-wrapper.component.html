@@ -1,1 +1,35 @@
-<app-landing-logo></app-landing-logo>
+<div class="burger" (click)="onBurgerClick()">
+    <div class="burger-line" [ngClass]="{'burger_open': isNavigationShown}"></div>
+</div>
+<div class="navigation" [ngClass]="{'navigation_active': isNavigationShown}">
+    <div class="navigation-container">
+        <div class="navigation-menu">
+            <a class="navigation-menu__item" (click)="goToAbout()">about</a>
+            <a class="navigation-menu__item" (click)="goToTimeline()">timeline</a>
+            <a class="navigation-menu__item" (click)="goToContacts()">contacts</a>
+        </div>
+    </div>
+    <div class="navigation-social">
+        <a href="http://vk.com/khakholin" class="navigation-social__item" target="_blank"><i class="fab fa-vk"></i></a>
+        <a href="http://instagram.com/khakholin" class="navigation-social__item" target="_blank"><i
+                class="fab fa-instagram"></i></a>
+        <a href="http://github.com/khakholin" class="navigation-social__item" target="_blank"><i
+                class="fab fa-github"></i></a>
+    </div>
+</div>
+<app-landing-logo (downClick)="goToAbout()"></app-landing-logo>
+<div #landingAbout>
+    <app-landing-about></app-landing-about>
+</div>
+<div #landingTimeline>
+    <app-landing-timeline></app-landing-timeline>
+</div>
+<div #landingContacts>
+    <app-landing-contacts></app-landing-contacts>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer__text">Created and written by Alexander Khakholin with HTML5, CSS3, JQuery</div>
+    </div>
+</footer>

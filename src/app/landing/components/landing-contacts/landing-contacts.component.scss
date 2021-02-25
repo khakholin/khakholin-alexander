@@ -1,0 +1,64 @@
+$bgc-dark: #5f6cd9;
+$bgc-light: rgb(248, 205, 218);
+$yellow: #ffcc1b;
+$green:#50d1ab;
+$logo-color: black;
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+@mixin main-font {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.contacts {
+    padding-top: 100px;
+
+    &-container {
+        max-width: 700px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        @include main-font;
+        font-size: 40px;
+    }
+
+    &-item {
+        text-align: center;
+        min-width: 50px;
+
+        &__icon {
+            color: rgba($bgc-dark, 0.7);
+            font-size: 30px;
+            transition: all 0.5s linear;
+
+            &:hover {
+                color: rgba($bgc-dark, 1);
+            }
+        }
+    }
+}
+
+@media(max-width: 319px) {
+    .contacts {
+        &-container {
+            flex-direction: column;
+        }
+
+        &-item {
+            margin-bottom: 20px;
+
+            &__icon {
+                font-size: 40px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
