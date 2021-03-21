@@ -5,6 +5,7 @@ import { LandingLogoComponent } from '@app/landing/components/landing-logo/landi
 import { LandingTimelineComponent } from '@app/landing/components/landing-timeline/landing-timeline.component';
 import { LandingWrapperComponent } from '@app/landing/components/landing-wrapper/landing-wrapper.component';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     ],
     imports: [
         CommonModule,
+        RouterModule,
     ],
     providers: [],
     bootstrap: []
