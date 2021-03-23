@@ -25,7 +25,7 @@
         width: 220px;
         height: 140px;
         border-radius: 8px;
-        box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+        box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2);
 
         &_first {
             z-index: 4;
@@ -88,7 +88,7 @@
     }
 
     50% {
-        transform: translateX(-200%) scale(1);
+        transform: translateX(200%) scale(1);
         top: 20px;
     }
 
@@ -104,12 +104,12 @@
     &__sber {
         color: white;
         font-weight: 700;
-        background: linear-gradient(-45deg,#fffc4a, #00d938);
+        background: linear-gradient(-45deg, #fffc4a, #00d938);
     }
 
     &__gpb {
         color: white;
         font-weight: 700;
-        background: linear-gradient(90deg,#a26d37,  #d3b082);
+        background: linear-gradient(90deg, #a26d37, #d3b082);
     }
 }
