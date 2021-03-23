@@ -1,0 +1,115 @@
+.coin-keeper {
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.cards {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 220px;
+        height: 140px;
+        border-radius: 8px;
+        box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+
+        &_first {
+            z-index: 4;
+            transform: scale(1.1);
+            top: 36px;
+        }
+
+        &_second {
+            z-index: 3;
+            top: 20px;
+        }
+
+        &_third {
+            z-index: 2;
+            transform: scale(0.9);
+            top: 4px;
+        }
+
+        &_other {
+            z-index: 1;
+            transform: scale(0.9);
+            top: 4px;
+        }
+
+        &_animate-next {
+            animation: 0.5s 0s ease-in-out 1 switch-next;
+        }
+
+        &_animate-prev {
+            animation: 0.5s 0s ease-in-out 1 switch-prev;
+        }
+    }
+}
+
+.buttons {
+    position: absolute;
+    bottom: 0;
+}
+
+@keyframes switch-next {
+    0% {
+        z-index: 6;
+    }
+
+    50% {
+        transform: translateX(200%) scale(1);
+        top: 20px;
+    }
+
+    100% {
+        transform: translateX(0) scale(0.9);
+        top: 4px;
+        z-index: 0;
+    }
+}
+
+@keyframes switch-prev {
+    0% {
+        z-index: 0;
+    }
+
+    50% {
+        transform: translateX(-200%) scale(1);
+        top: 20px;
+    }
+
+    100% {
+        transform: translateX(0) scale(1.1);
+        z-index: 6;
+        top: 36px;
+    }
+}
+
+
+.card {
+    &__sber {
+        color: white;
+        font-weight: 700;
+        background: linear-gradient(-45deg,#fffc4a, #00d938);
+    }
+
+    &__gpb {
+        color: white;
+        font-weight: 700;
+        background: linear-gradient(90deg,#a26d37,  #d3b082);
+    }
+}

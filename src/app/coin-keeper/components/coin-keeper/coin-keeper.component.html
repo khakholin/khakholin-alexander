@@ -1,0 +1,32 @@
+<div class="coin-keeper">
+    <div class="cards" (swipeleft)="isAnimatePrev ? null : goToPrev()"
+        (swiperight)="isAnimateNext ? null : goToNext()">
+        <div 
+            *ngFor="let card of cards; index as cardIndex"
+            [ngClass]="
+                {
+                    'cards__item_first': cardIndex === 0,
+                    'cards__item_second': cardIndex === 1,
+                    'cards__item_third': cardIndex === 2,
+                    'cards__item_other': cardIndex > 2,
+                    'cards__item_animate-next': cardIndex === 0 && isAnimateNext,
+                    'cards__item_animate-prev': cardIndex === cards.length - 1 && isAnimatePrev
+                }
+            "
+            [style.background-color]="card.color"
+            [className]="'cards__item ' + card?.styleClass"
+        >
+            {{card.title}}
+        </div>
+    </div>
+    <div *ngFor="let history of cards[0].history">
+        {{history.date | date: 'dd.MM.yyyy, HH:mm'}}
+        {{history.subj}}
+        {{history.count}} Руб.
+        {{history.comment}}
+    </div>
+    <div class="buttons">
+        <button [disabled]="isAnimatePrev" (click)="goToPrev()">PREV</button>
+        <button [disabled]="isAnimateNext" (click)="goToNext()">NEXT</button>
+    </div>
+</div>
