@@ -1,9 +1,6 @@
 <div class="coin-keeper">
-    <div class="cards" (swipeleft)="isAnimatePrev ? null : goToPrev()"
-        (swiperight)="isAnimateNext ? null : goToNext()">
-        <div 
-            *ngFor="let card of cards; index as cardIndex"
-            [ngClass]="
+    <div class="cards" (swipeleft)="isAnimatePrev ? null : goToPrev()" (swiperight)="isAnimateNext ? null : goToNext()">
+        <div *ngFor="let card of cards; index as cardIndex" [ngClass]="
                 {
                     'cards__item_first': cardIndex === 0,
                     'cards__item_second': cardIndex === 1,
@@ -12,26 +9,25 @@
                     'cards__item_animate-next': cardIndex === 0 && isAnimateNext,
                     'cards__item_animate-prev': cardIndex === cards.length - 1 && isAnimatePrev
                 }
-            "
-            [style.background-color]="card.color"
-            [className]="'cards__item ' + card?.styleClass"
-        >
+            " [style.background-color]="card.color" [className]="'cards__item ' + card?.styleClass">
             {{card.title}}
         </div>
     </div>
     <div class="arrows">
-        <button [disabled]="isAnimatePrev"  class="arrows__item arrows__item_left" (click)="goToPrev()"></button>
+        <button [disabled]="isAnimatePrev" class="arrows__item arrows__item_left" (click)="goToPrev()"></button>
         <button [disabled]="isAnimateNext" class="arrows__item arrows__item_right" (click)="goToNext()"></button>
     </div>
     <div class="perspective"></div>
     <div class="history">
         <span class="history__title">ИСТОРИЯ</span>
         <perfect-scrollbar>
-            <div class="history__description" *ngFor="let history of cards[0].history">
-                {{history.date | date: 'dd.MM.yyyy, HH:mm'}}
-                {{history.subj}}
-                {{history.count}} Руб.
-                {{history.comment}}
+            <div class="history-body">
+                <div class="history-body__item" *ngFor="let history of cards[0].history">
+                    {{history.date | date: 'dd.MM.yyyy, HH:mm'}}
+                    {{history.subj}}
+                    {{history.count}} Руб.
+                    {{history.comment}}
+                </div>
             </div>
         </perfect-scrollbar>
     </div>
