@@ -23,6 +23,522 @@ export class CoinKeeperComponent {
                     count: '300',
                     comment: 'Коммент2'
                 },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
+                {
+                    date: '2021-03-23',
+                    subj: 'Лента',
+                    count: '1200',
+                    comment: 'Коммент1'
+                },
+                {
+                    date: '2021-03-22',
+                    subj: 'КБ',
+                    count: '300',
+                    comment: 'Коммент2'
+                },
             ],
             styleClass: 'card__sber'
         },
@@ -32,12 +548,12 @@ export class CoinKeeperComponent {
             styleClass: 'card__gpb'
         },
         {
-            title: 'Открытие',
-            color: 'cyan',
+            title: 'ОТКРЫТИЕ',
+            styleClass: 'card__open'
         },
         {
-            title: 'Tinkoff',
-            color: 'yellow',
+            title: 'TINKOFF',
+            styleClass: 'card__tinkoff'
         },
     ];
     isAnimateNext = false;

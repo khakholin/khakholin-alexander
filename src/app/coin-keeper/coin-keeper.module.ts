@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core';
 import { DatePipe, CommonModule } from '@angular/common';
 import { CoinKeeperComponent } from './components/coin-keeper/coin-keeper.component';
 import { CoinKeeperRoutingModule } from './coin-keeper-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { MaterialModule } from '@app/material.module';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 @NgModule({
     declarations: [
       CoinKeeperComponent,
     ],
     imports: [
-        CommonModule,
         CoinKeeperRoutingModule,
+        CommonModule,
+        MaterialModule,
+        PerfectScrollbarModule,
     ],
     providers: [
       DatePipe,

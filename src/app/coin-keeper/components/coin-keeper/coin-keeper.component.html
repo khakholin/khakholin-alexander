@@ -19,14 +19,20 @@
             {{card.title}}
         </div>
     </div>
-    <div *ngFor="let history of cards[0].history">
-        {{history.date | date: 'dd.MM.yyyy, HH:mm'}}
-        {{history.subj}}
-        {{history.count}} Руб.
-        {{history.comment}}
+    <div class="arrows">
+        <button [disabled]="isAnimatePrev"  class="arrows__item arrows__item_left" (click)="goToPrev()"></button>
+        <button [disabled]="isAnimateNext" class="arrows__item arrows__item_right" (click)="goToNext()"></button>
     </div>
-    <div class="buttons">
-        <button [disabled]="isAnimatePrev" (click)="goToPrev()">PREV</button>
-        <button [disabled]="isAnimateNext" (click)="goToNext()">NEXT</button>
+    <div class="perspective"></div>
+    <div class="history">
+        <span class="history__title">ИСТОРИЯ</span>
+        <perfect-scrollbar>
+            <div class="history__description" *ngFor="let history of cards[0].history">
+                {{history.date | date: 'dd.MM.yyyy, HH:mm'}}
+                {{history.subj}}
+                {{history.count}} Руб.
+                {{history.comment}}
+            </div>
+        </perfect-scrollbar>
     </div>
 </div>
