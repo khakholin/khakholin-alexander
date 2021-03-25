@@ -1,16 +1,17 @@
 <div class="coin-keeper">
-    <div class="cards" (swipeleft)="isAnimatePrev ? null : goToPrev()" (swiperight)="isAnimateNext ? null : goToNext()">
+    <div class="card-wrapper" (swipeleft)="isAnimatePrev ? null : goToPrev()" (swiperight)="isAnimateNext ? null : goToNext()">
         <div *ngFor="let card of cards; index as cardIndex" [ngClass]="
                 {
-                    'cards__item_first': cardIndex === 0,
-                    'cards__item_second': cardIndex === 1,
-                    'cards__item_third': cardIndex === 2,
-                    'cards__item_other': cardIndex > 2,
-                    'cards__item_animate-next': cardIndex === 0 && isAnimateNext,
-                    'cards__item_animate-prev': cardIndex === cards.length - 1 && isAnimatePrev
+                    'card_first': cardIndex === 0,
+                    'card_second': cardIndex === 1,
+                    'card_third': cardIndex === 2,
+                    'card_other': cardIndex > 2,
+                    'card_animate-next': cardIndex === 0 && isAnimateNext,
+                    'card_animate-prev': cardIndex === cards.length - 1 && isAnimatePrev
                 }
-            " [style.background-color]="card.color" [className]="'cards__item ' + card?.styleClass">
-            {{card.title}}
+            " [style.background-color]="card.color" [className]="'card ' + card?.styleClass">
+            <span class="card__title">{{card.title}}</span>
+            <span class="card__sub-title">{{card.subTitle}}</span>
         </div>
     </div>
     <div class="arrows">
@@ -31,4 +32,5 @@
             </div>
         </perfect-scrollbar>
     </div>
+    <div class="bottom-shadow"></div>
 </div>
