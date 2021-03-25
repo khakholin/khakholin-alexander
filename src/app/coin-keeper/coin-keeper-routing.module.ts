@@ -10,6 +10,10 @@ const routes: Routes = [
     component: CoinKeeperComponent,
     canActivate: [GlobalLayoutGuard],
   },
+  {
+    path: '**',
+    redirectTo: '/app/coin-keeper'
+  }
 ];
 
 @NgModule({
