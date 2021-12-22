@@ -1,24 +1,40 @@
-<div class="burger" (click)="onBurgerClick()">
-    <div class="burger-line" [ngClass]="{'burger_open': isNavigationShown}"></div>
+<div
+    class="burger"
+    [style.borderColor]="isNavigationShown ? 'white' : 'transparent'"
+    (click)="onBurgerClick()"
+>
+    <div
+        class="burger-line"
+        [ngClass]="{'burger_open': isNavigationShown}"
+    ></div>
 </div>
-<div class="navigation" [ngClass]="{'navigation_active': isNavigationShown}">
-    <div class="navigation-container">
-        <div class="navigation-menu">
-            <a class="navigation-menu__item" (click)="goToAbout()">about</a>
-            <a class="navigation-menu__item" (click)="goToTimeline()">timeline</a>
-            <a class="navigation-menu__item" (click)="goToContacts()">contacts</a>
-            <a class="navigation-menu__item" [routerLink]="'/sign-in'" (click)="hideNavigation()">sign-in</a>
-        </div>
+<div
+    class="navigation"
+    [ngClass]="{'navigation_active': isNavigationShown}"
+>
+    <div class="navigation-menu">
+        <a
+            *ngFor="let item of navigationItems"
+            class="navigation-menu__item"
+            (click)="navigateTo(item)"
+        >
+            {{item}}
+        </a>
     </div>
+
     <div class="navigation-social">
-        <a href="http://vk.com/khakholin" class="navigation-social__item" target="_blank"><i class="fab fa-vk"></i></a>
-        <a href="http://instagram.com/khakholin" class="navigation-social__item" target="_blank"><i
-                class="fab fa-instagram"></i></a>
-        <a href="http://github.com/khakholin" class="navigation-social__item" target="_blank"><i
-                class="fab fa-github"></i></a>
+        <a
+            *ngFor="let item of navigationSocialItems"
+            [href]="item.url"
+            class="navigation-social__item"
+            target="_blank"
+        >
+            <i [class]="'fab ' + item.iconClass"></i>
+        </a>
     </div>
 </div>
-<app-landing-logo (downClick)="goToAbout()"></app-landing-logo>
+
+<app-landing-logo (downClick)="navigateTo('about')"></app-landing-logo>
 <div #landingAbout>
     <app-landing-about></app-landing-about>
 </div>
@@ -31,6 +47,8 @@
 
 <footer class="footer">
     <div class="footer-container">
-        <div class="footer__text">Created and written by Alexander Khakholin with HTML5, CSS3, JQuery</div>
+        <div class="footer__text">
+            Created and written by Alexander Khakholin with Angular
+        </div>
     </div>
 </footer>

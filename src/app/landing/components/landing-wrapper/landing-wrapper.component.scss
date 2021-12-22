@@ -102,13 +102,9 @@ $logo-color: black;
     overflow: hidden;
     background-color: rgba(black, 0.98);
     transition: all ease 0.5s;
-
-    &-container {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &-menu {
         display: flex;

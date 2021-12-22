@@ -1,4 +1,7 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, ViewChild, ElementRef, Inject, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
+import { ENavigationItems } from '@app/landing/models/enums';
 
 @Component({
     selector: 'app-landing-wrapper',
@@ -14,35 +17,52 @@ export class LandingWrapperComponent {
     landingContactsEl: ElementRef;
 
     isNavigationShown = false;
+    readonly navigationSocialItems = [
+        {url: 'http://vk.com/khakholin', iconClass: 'fa-vk'},
+        {url: 'http://instagram.com/khakholin', iconClass: 'fa-instagram'},
+        {url: 'http://vk.com/khakholin', iconClass: 'fa-github'},
+    ];
 
-    goToAbout(): void {
-        this.landingAboutEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
-        this.hideNavigation();
+    constructor(
+        @Inject(DOCUMENT) private document: Document,
+        private router: Router,
+        private renderer: Renderer2,
+    ) {}
+
+    get navigationItems(): string[] {
+        return Object.values(ENavigationItems);
     }
 
-    goToTimeline(): void {
-        this.landingTimelineEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
-        this.hideNavigation();
-    }
+    navigateTo(itemName: string): void {
+        const {ABOUT, CONTACTS, TIMELINE, SIGN_IN} = ENavigationItems;
 
-    goToContacts(): void {
-        this.landingContactsEl.nativeElement.scrollIntoView({ behavior: 'smooth' });
-        this.hideNavigation();
+        if (itemName === SIGN_IN) {
+            this.router.navigate([SIGN_IN]);
+            return;
+        }
+
+        const childName = {
+            [ABOUT]: 'landingAboutEl',
+            [CONTACTS]: 'landingContactsEl',
+            [TIMELINE]: 'landingTimelineEl',
+        }[itemName];
+        if (childName) {
+            this[childName].nativeElement.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        this.toggleNavigation();
     }
 
     onBurgerClick(): void {
-        this.isNavigationShown ? this.hideNavigation() : this.showNavigation();
+        this.toggleNavigation();
     }
 
-    showNavigation(): void {
-        this.isNavigationShown = true;
-        document.querySelectorAll('body')[0].style.overflow = 'hidden';
-        (document.querySelectorAll('.burger')[0] as HTMLElement).style.borderColor = 'white';
-    }
-
-    hideNavigation(): void {
-        this.isNavigationShown = false;
-        document.querySelectorAll('body')[0].style.overflow = 'visible';
-        (document.querySelectorAll('.burger')[0] as HTMLElement).style.borderColor = 'transparent';
+    private toggleNavigation(): void {
+        this.renderer.setStyle(
+            document.body,
+            'overflow',
+            this.isNavigationShown ? 'visible' : 'hidden',
+        );
+        this.isNavigationShown = !this.isNavigationShown;
     }
 }
