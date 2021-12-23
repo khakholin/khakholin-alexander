@@ -6,9 +6,5 @@ import { Component, Output, EventEmitter } from '@angular/core';
     styleUrls: ['./landing-logo.component.scss']
 })
 export class LandingLogoComponent {
-    @Output() downClick = new EventEmitter<boolean>();
-
-    onDownClick(event) {
-        this.downClick.emit();
-    }
+    @Output() downClick = new EventEmitter();
 }

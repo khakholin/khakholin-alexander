@@ -2,11 +2,10 @@
     <div class="main-container">
         <div class="main-logo">
             <div class="main-logo__lines main-logo__lines_left">
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
+                <span
+                    *ngFor="let i of [0, 1, 2, 3, 4]"
+                    class="main-logo__line"
+                ></span>
             </div>
             <div class="main-logo__circle main-logo__circle_external">
                 <div class="main-logo__circle main-logo__circle_internal">
@@ -14,17 +13,16 @@
                 </div>
             </div>
             <div class="main-logo__lines main-logo__lines_right">
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
-                <span class="main-logo__line"></span>
+                <span
+                    *ngFor="let i of [0, 1, 2, 3, 4]"
+                    class="main-logo__line"
+                ></span>
             </div>
         </div>
         <h1 class="main-title">khakholin alexander</h1>
         <h2 class="main-subtitle">frontend developer</h2>
     </div>
-    <a class="main-button" (click)="onDownClick($event)">
+    <a class="main-button" (click)="downClick.emit()">
         <div class="main-button__arrow"></div>
     </a>
 </div>

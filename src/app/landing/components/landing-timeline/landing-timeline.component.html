@@ -7,261 +7,78 @@
             </div>
             <div class="timeline-block__none timeline-block__none_right"></div>
         </div>
-        <div class="timeline-block">
-            <div class="timeline-description timeline__description timeline__description_left">
-                <div class="timeline-description__title">Intabia</div>
-                <div class="timeline-description__subtitle">frontend-developer</div>
-                <div class="timeline-description__text"></div>
-                <div class="timeline-skills timeline-skills_left">
-                    <div class="timeline-skills__item timeline-skills__item_left">HTML5</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">CSS/Sass/Scss</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">Typescript</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">Angular 8-11</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">React</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">Docker</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">Nginx</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">Node.js</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">NestJS</div>
-                </div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_work" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)">
-                </div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_left"></div>
-            </div>
-            <div class="timeline-block__none timeline-block__none_right">
-                <div class="timeline-block__date">December 2019</div>
-            </div>
-        </div>
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">September 2019</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_study" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Novosibirsk State Technical University</div>
-                <div class="timeline-description__subtitle">Started studying for a master</div>
-            </div>
-        </div>
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">August 2019</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_life" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Web design self education</div>
-                <div class="timeline-description__subtitle">Dig into HTML, CSS, JavaScript, watch and read a lot of
-                    training material and build my first web sites</div>
-            </div>
-        </div>
-        <div class="timeline-block">
-            <div class="timeline-description timeline__description timeline__description_left">
-                <div class="timeline-description__title">RID Analytics</div>
-                <div class="timeline-description__subtitle">C# developer</div>
-                <div class="timeline-description__text"></div>
-                <div class="timeline-skills timeline-skills_left">
-                    <div class="timeline-skills__item timeline-skills__item_left">C#</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">.NET Framework</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">.NET Core</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">HTML</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">XML</div>
-                    <div class="timeline-skills__item timeline-skills__item_left">RegExps</div>
-                </div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_work" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_left"></div>
-            </div>
-            <div class="timeline-block__none timeline-block__none_right">
-                <div class="timeline-block__date">July 2019</div>
-            </div>
-        </div>
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">June 2019</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_study" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Bachelor of Applied Mathematics and Computer Science</div>
-                <div class="timeline-description__subtitle">Field of programming, modeling and data analysis</div>
-            </div>
-        </div>
 
-        <div class="timeline-year">
-            <div class="timeline-year__border"></div>
-            <div class="timeline-year__title">2019</div>
-        </div>
+        <ng-container *ngFor="let item of timelineInfo; index as i">
+            <div class="timeline-block">
+                <ng-container *ngIf="item.type === 'WORK'; else notWork">
+                    <div class="timeline-description timeline__description timeline__description_left">
+                        <div class="timeline-description__title">{{item.title}}</div>
+                        <div class="timeline-description__subtitle">{{item.subtitle}}</div>
+                        <div class="timeline-description__text"></div>
+                        <div 
+                            *ngIf="item.skills as skills"
+                            class="timeline-skills timeline-skills_left"
+                        >
+                            <div
+                                *ngFor="let skill of skills"
+                                class="timeline-skills__item timeline-skills__item_left"
+                            >
+                                {{skill}}
+                            </div>
+                        </div>
+                    </div>
+                    <ng-container
+                        *ngTemplateOutlet="middleBlock; context: {type: item.type}"
+                    ></ng-container>
+                    <div class="timeline-block__none timeline-block__none_right">
+                        <div class="timeline-block__date">{{item.date | date:'MMMM YYYY'}}</div>
+                    </div>
+                </ng-container>
 
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">September 2015</div>
+                <ng-template #notWork>
+                    <div class="timeline-block__none timeline-block__none_left">
+                        <div class="timeline-block__date">{{item.date | date:'MMMM YYYY'}}</div>
+                    </div>
+                    <ng-container
+                        *ngTemplateOutlet="middleBlock; context: {type: item.type}"
+                    ></ng-container>
+                    <div class="timeline-description timeline__description timeline__description_right">
+                        <div class="timeline-description__title">{{item.title}}</div>
+                        <div class="timeline-description__subtitle">{{item.subtitle}}</div>
+                    </div>
+                </ng-template>
             </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_study" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Novosibirsk State Technical University</div>
-                <div class="timeline-description__subtitle">Student life began</div>
-            </div>
-        </div>
 
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">June 2015</div>
+            <div
+                *ngIf="newTimelineYear(timelineInfo[i], timelineInfo?.[i+1]) as year"
+                class="timeline-year"
+            >
+                <div class="timeline-year__border"></div>
+                <div class="timeline-year__title">{{year}}</div>
             </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_life" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">School graduation day</div>
-                <div class="timeline-description__subtitle">So these 11 years ended...</div>
-            </div>
-        </div>
-
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">June 2015</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_life" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Exams</div>
-                <div class="timeline-description__subtitle">Passed on Russian language, mathematics and computer science
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-year">
-            <div class="timeline-year__border"></div>
-            <div class="timeline-year__title">2015</div>
-        </div>
-
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">May 2012</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_life" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Graduation from music school</div>
-                <div class="timeline-description__subtitle">My first graduation with tape over my shoulder</div>
-            </div>
-        </div>
-
-        <div class="timeline-year">
-            <div class="timeline-year__border"></div>
-            <div class="timeline-year__title">2012</div>
-        </div>
-
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">June 2010</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_life" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Photoshop self education</div>
-                <div class="timeline-description__subtitle">I started making pictures, posters, artwork related to the
-                    game I was playing at that time</div>
-            </div>
-        </div>
-
-        <div class="timeline-year">
-            <div class="timeline-year__border"></div>
-            <div class="timeline-year__title">2010</div>
-        </div>
-
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">Оctober 2004</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_study" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">School of Music</div>
-                <div class="timeline-description__subtitle">Learning to play the piano</div>
-            </div>
-        </div>
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">September 2004</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_study" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Gymnasium #4</div>
-                <div class="timeline-description__subtitle">The first training has begun</div>
-            </div>
-        </div>
-
-        <div class="timeline-year">
-            <div class="timeline-year__border"></div>
-            <div class="timeline-year__title">2004</div>
-        </div>
-
-        <div class="timeline-block">
-            <div class="timeline-block__none timeline-block__none_left">
-                <div class="timeline-block__date">October 1997</div>
-            </div>
-            <div class="timeline-block__middle">
-                <div class="timeline-block__circle timeline-block__circle_life" (mouseover)="onCircleOver($event)"
-                    (mouseout)="onCircleOut($event)"></div>
-                <div class="timeline-block__vertical-line"></div>
-                <div class="timeline-block__horizontal-line timeline-block__horizontal-line_right"></div>
-            </div>
-            <div class="timeline-description timeline__description timeline__description_right">
-                <div class="timeline-description__title">Hello, World!</div>
-                <div class="timeline-description__subtitle">I was born in Novosibirsk, Russia</div>
-            </div>
-        </div>
-        <div class="timeline-year">
-            <div class="timeline-year__border"></div>
-            <div class="timeline-year__title">1997</div>
-        </div>
+        </ng-container>
     </div>
 </div>
+
+<ng-template #middleBlock let-type="type">
+    <div class="timeline-block__middle">
+        <div
+            class="timeline-block__circle"
+            [ngClass]="{
+                'timeline-block__circle_study': type === 'STUDY',
+                'timeline-block__circle_life': type === 'LIFE',
+                'timeline-block__circle_work': type === 'WORK'
+            }"
+            (mouseover)="onCircleOver($event)"
+            (mouseout)="onCircleOut($event)"
+        ></div>
+        <div class="timeline-block__vertical-line"></div>
+        <div
+            class="timeline-block__horizontal-line"
+            [ngClass]="{
+                'timeline-block__horizontal-line_right': type === 'STUDY' || type === 'LIFE',
+                'timeline-block__horizontal-line_left': type === 'WORK'
+            }"
+            ></div>
+    </div>
+</ng-template>

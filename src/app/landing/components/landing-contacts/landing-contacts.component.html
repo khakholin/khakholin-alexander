@@ -1,23 +1,13 @@
 <div class="contacts">
     <h3 class="contacts__title">Contacts</h3>
     <div class="container contacts-container">
-        <a href="tel:+79130052654" class="contacts-item" target="_blank">
-            <i class="contacts-item__icon fas fa-phone-alt"></i>
-        </a>
-        <a href="mailto:khakholin@mail.ru" class="contacts-item" target="_blank">
-            <i class="contacts-item__icon fas fa-envelope-open-text"></i>
-        </a>
-        <a href="http://teleg.run/khakholin" class="contacts-item" target="_blank">
-            <i class="contacts-item__icon fab fa-telegram-plane"></i>
-        </a>
-        <a href="http://vk.com/khakholin" class="contacts-item" target="_blank">
-            <i class="contacts-item__icon fab fa-vk"></i>
-        </a>
-        <a href="http://instagram.com/khakholin" class="contacts-item" target="_blank">
-            <i class="contacts-item__icon fab fa-instagram"></i>
-        </a>
-        <a href="http://github.com/khakholin" class="contacts-item" target="_blank">
-            <i class="contacts-item__icon fab fa-github"></i>
+        <a
+            *ngFor="let item of socialItems"
+            [href]="item.url"
+            class="contacts-item"
+            target="_blank"
+        >
+            <i [class]="'contacts-item__icon ' + item.iconClass"></i>
         </a>
     </div>
 </div>

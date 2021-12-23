@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SOCIAL_ITEMS } from '@app/landing/models/constants';
 
 @Component({
     selector: 'app-landing-contacts',
@@ -6,4 +7,5 @@ import { Component } from '@angular/core';
     styleUrls: ['./landing-contacts.component.scss']
 })
 export class LandingContactsComponent {
+    socialItems = SOCIAL_ITEMS;
 }

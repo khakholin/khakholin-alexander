@@ -29,12 +29,12 @@
             class="navigation-social__item"
             target="_blank"
         >
-            <i [class]="'fab ' + item.iconClass"></i>
+            <i [class]="item.iconClass"></i>
         </a>
     </div>
 </div>
 
-<app-landing-logo (downClick)="navigateTo('about')"></app-landing-logo>
+<app-landing-logo (downClick)="navigateTo('about', true)"></app-landing-logo>
 <div #landingAbout>
     <app-landing-about></app-landing-about>
 </div>
