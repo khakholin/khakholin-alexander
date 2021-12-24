@@ -1,6 +1,12 @@
 <div class="coin-keeper">
-    <div class="card-wrapper" (swipeleft)="isAnimatePrev ? null : goToPrev()" (swiperight)="isAnimateNext ? null : goToNext()">
-        <div *ngFor="let card of cards; index as cardIndex" [ngClass]="
+    <div
+        class="card-wrapper"
+        (swipeleft)="isAnimatePrev ? null : switchPrev()"
+        (swiperight)="isAnimateNext ? null : switchNext()"
+    >
+        <div 
+            *ngFor="let card of cards; index as cardIndex"
+            [ngClass]="
                 {
                     'card_first': cardIndex === 0,
                     'card_second': cardIndex === 1,
@@ -9,21 +15,36 @@
                     'card_animate-next': cardIndex === 0 && isAnimateNext,
                     'card_animate-prev': cardIndex === cards.length - 1 && isAnimatePrev
                 }
-            " [style.background-color]="card.color" [className]="'card ' + card?.styleClass">
+            "
+            [className]="'card ' + card?.styleClass"
+        >
             <span class="card__title">{{card.title}}</span>
             <span class="card__sub-title">{{card.subTitle}}</span>
         </div>
     </div>
+
     <div class="arrows">
-        <button [disabled]="isAnimatePrev" class="arrows__item arrows__item_left" (click)="goToPrev()"></button>
-        <button [disabled]="isAnimateNext" class="arrows__item arrows__item_right" (click)="goToNext()"></button>
+        <button
+            [disabled]="isAnimatePrev"
+            class="arrows__item arrows__item_left"
+            (click)="switchPrev()"
+        ></button>
+        <button
+            [disabled]="isAnimateNext"
+            class="arrows__item arrows__item_right"
+            (click)="switchNext()"
+        ></button>
     </div>
+
     <div class="perspective"></div>
     <div class="history">
         <span class="history__title">ИСТОРИЯ</span>
         <perfect-scrollbar>
             <div class="history-body">
-                <div class="history-body__item" *ngFor="let history of cards[0].history">
+                <div
+                    class="history-body__item"
+                    *ngFor="let history of cards[0].history"
+                >
                     {{history.date | date: 'dd.MM.yyyy, HH:mm'}}
                     {{history.subj}}
                     {{history.count}} Руб.

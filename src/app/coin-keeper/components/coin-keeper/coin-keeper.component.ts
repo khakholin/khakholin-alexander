@@ -1,48 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ICoinKeeperCard } from '@app/coin-keeper/models/coin-keeper';
+import { CoinKeeperService } from '@app/coin-keeper/services/coin-keeper.service';
 
 @Component({
     selector: 'app-coin-keeper',
     templateUrl: './coin-keeper.component.html',
     styleUrls: ['./coin-keeper.component.scss']
 })
-export class CoinKeeperComponent {
-    cards = [
+export class CoinKeeperComponent implements OnInit {
+    cards: ICoinKeeperCard[] = [
         {
             styleClass: 'card-adding',
             title: '+',
             subTitle: 'Создать счет',
         },
-        {
-            title: 'СБЕР',
-            color: 'green',
-            history: [
-                {
-                    date: '2021-03-22',
-                    subj: 'КБ',
-                    count: '300',
-                    comment: 'LAST'
-                },
-            ],
-            styleClass: 'card__sber'
-        },
-        {
-            title: 'ГПБ',
-            color: 'blue',
-            styleClass: 'card__gpb'
-        },
-        {
-            title: 'ОТКРЫТИЕ',
-            styleClass: 'card__open'
-        },
-        {
-            title: 'TINKOFF',
-            styleClass: 'card__tinkoff'
-        },
     ];
     isAnimateNext = false;
     isAnimatePrev = false;
 
-    goToNext() {
+    constructor(private coinKeeperService: CoinKeeperService) {}
+
+    ngOnInit() {
+        this.loadCards();
+    }
+
+    loadCards() {
+        this.coinKeeperService.loadCards().subscribe((data) => {
+            this.cards = [...this.cards, ...data.cards];
+        });
+    }
+
+    switchNext() {
         this.isAnimateNext = true;
         setTimeout(() => {
             this.isAnimateNext = false;
@@ -52,12 +40,12 @@ export class CoinKeeperComponent {
         }, 500);
     }
 
-    goToPrev() {
+    switchPrev() {
         this.isAnimatePrev = true;
         setTimeout(() => {
             this.isAnimatePrev = false;
             const lastCard = this.cards.pop();
-            this.cards = [lastCard].concat(this.cards);
+            this.cards = [lastCard, ...this.cards];
         }, 500);
     }
 }
